@@ -1,0 +1,18 @@
+$borderColor: #D4D4D4;
+$appColor: #4A235A;
+$appInactive: #D2B4DE;
+
+:export {
+  borderColor: $borderColor;
+  appColor: $appColor;
+  appInactive: $appInactive;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 12pt;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
