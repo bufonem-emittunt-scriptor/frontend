@@ -52,6 +52,7 @@
                   <x-input
                     v-model="vol.email"
                     caption="E-mail"
+                    type="email"
                     :color="sty.appColor"
                     class="field"
                     width="50%"
@@ -113,7 +114,7 @@
             </transition>
 
 
-            <x-button
+            <x-button-ns
               class="field"
               style="margin-top: 40px"
               :color="sty.appColor"
@@ -121,7 +122,7 @@
               dark
             >
               Зарегистрироваться
-            </x-button>
+            </x-button-ns>
             <div class="donthave" @click="() => authChange('login')">
               У меня есть аккаунт
             </div>
@@ -147,7 +148,7 @@
           return 'волонтера';
         }
         if (this.userType === 'member') {
-          return 'сотрудника';
+          return 'представителя музея';
         }
       }
     },

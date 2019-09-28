@@ -18,7 +18,7 @@
             :color="sty.appColor"
             class="field"
           />
-          <x-button
+          <x-button-ns
             class="field"
             style="margin-top: 40px"
             :color="sty.appColor"
@@ -26,7 +26,7 @@
             dark
           >
             Войти
-          </x-button>
+          </x-button-ns>
           <div class="alter">
             <div class="alter-login">
               <img src="@/static/imgs/vk-logo.png" class="icon-img" />

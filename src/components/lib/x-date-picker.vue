@@ -226,6 +226,7 @@
       height: calc(44px - 10px);
       border-radius: 5px;
       border: 1px solid $borderColor;
+      color: $borderColor;
     }
   }
 

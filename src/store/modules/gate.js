@@ -1,6 +1,6 @@
 export default {
   state: {
-    userType: 'museum'
+    userType: 'member'
   },
   actions: {
 

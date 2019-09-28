@@ -65,14 +65,4 @@
     }
   }
 
-  @media only screen and (max-width: 420px) {
-    .button-container {
-      .x-button {
-        font-size: 12px;
-        padding: 4px 8px;
-        width: calc(100% - 18px);
-      }
-    }
-  }
-
 </style>

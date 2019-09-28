@@ -31,4 +31,10 @@
     cursor: pointer;
     position: relative;
   }
+
+  @media only screen and (max-width: 420px) {
+    .x-icon {
+      font-size: 24px;
+    }
+  }
 </style>

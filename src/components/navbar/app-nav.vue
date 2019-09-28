@@ -1,6 +1,11 @@
 <template>
   <div class="app-nav" :style="computedStyle">
-    <h2>Müseer</h2>
+    <div class="back-button" v-ripple @click="$router.back()">
+      <i class="material-icons" style="margin-left: 4px;">
+        arrow_back_ios
+      </i>
+    </div>
+    <h2 style="cursor: pointer" @click="() => $router.push('/')">Müseer</h2>
   </div>
 </template>
 
@@ -29,5 +34,22 @@
     color: white;
     background-color: #4A235A;
     z-index: 99;
+    .back-button {
+      font-size: 18pt;
+      position: fixed;
+      color: white;
+      top: 15px;
+      left: 14px;
+      z-index: 63;
+      padding: 4px;
+      padding-right: 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.05);
+      cursor: pointer;
+    }
   }
 </style>

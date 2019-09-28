@@ -10,10 +10,10 @@
 
 <style scoped lang="scss">
   .app-container {
-    width: 100%;
+    width: calc(100% - 24px);
     max-width: 720px;
     margin: auto;
-    margin-top: 64px;
+    margin-top: 70px;
     padding: 12px;
   }
 </style>

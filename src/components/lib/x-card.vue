@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    props: ['pa', 'ma', 'outlined', 'rounded', 'elev', 'color', 'text-color', 'fd'],
+    props: ['pa', 'ma', 'outlined', 'rounded', 'elev', 'color', 'text-color', 'fd', 'customround'],
     computed: {
       computedElev() {
         return this.elev == null ? 0 : this.elev;
@@ -25,6 +25,7 @@
         if (this.rounded != null) {
           style.borderRadius = '5px';
         }
+        this.customround && (style.borderRadius = this.customround);
         return style;
       }
     }

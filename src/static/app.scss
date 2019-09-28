@@ -1,11 +1,13 @@
-$borderColor: #D4D4D4;
+$borderColor: #B0B0B0;
 $appColor: #4A235A;
 $appInactive: #D2B4DE;
+$errorColor: #CB4335;
 
 :export {
   borderColor: $borderColor;
   appColor: $appColor;
   appInactive: $appInactive;
+  errorColor: $errorColor;
 }
 
 body {
@@ -15,4 +17,8 @@ body {
   padding: 0px;
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
+}
+
+@media only screen and (max-width: 420px) {
+  font-size: 8pt;
 }

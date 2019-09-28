@@ -3,7 +3,7 @@ import XRow from './components/lib/x-row.vue';
 import XCol from './components/lib/x-col.vue';
 import XIcon from './components/lib/x-icon.vue';
 import XButton from './components/lib/x-button.vue';
-import XText from './components/lib/x-text.vue';
+import XButtonNs from './components/lib/x-button-no-scale.vue';
 import XDatePicker from './components/lib/x-date-picker.vue';
 import XInput from './components/lib/x-input.vue';
 import XPicker from './components/lib/x-picker.vue';
@@ -18,7 +18,7 @@ export default {
     Vue.component('x-col', XCol);
     Vue.component('x-icon', XIcon);
     Vue.component('x-button', XButton);
-    Vue.component('x-text', XText);
+    Vue.component('x-button-ns', XButtonNs);
     Vue.component('x-date-picker', XDatePicker);
     Vue.component('x-input', XInput);
     Vue.component('x-picker', XPicker);

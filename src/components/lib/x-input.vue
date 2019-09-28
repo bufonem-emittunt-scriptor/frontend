@@ -1,7 +1,7 @@
 <template>
   <div class="x-input-container" :style="containerStyles">
     <input
-      :type="ctype"
+      :type="nativeType || ctype"
       v-model="tvalue"
       class="x-input"
       ref="input"
@@ -25,7 +25,7 @@
 
 <script>
   export default {
-    props: ['type', 'value', 'caption', 'width', 'ma', 'color'],
+    props: ['type', 'value', 'caption', 'width', 'ma', 'color', 'nativeType'],
     data: () => ({
       isFocused: false,
       visibility: false
