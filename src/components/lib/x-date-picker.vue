@@ -2,7 +2,7 @@
   <div class="x-date-picker" :style="computedColors">
     <div class="x-date-viewer" @click="dialog = true" v-ripple>
       <x-icon name="date_range" ir />
-      <div class="text-date">{{ dateViewer(value) }}</div>
+      <div class="text-date" :style="`color: ${nv ? sty.borderColor : 'black'}`">{{ dateViewer(value) }}</div>
     </div>
     <transition name="to-opaque">
       <div v-if="dialog" class="x-shadow" @click="endPick">
@@ -84,7 +84,8 @@
       monthsShort: ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
       month: 0,
       year: 1970,
-      whatChoose: 'day'
+      whatChoose: 'day',
+      nv: true
     }),
     methods: {
       indent(dateString) {
@@ -133,8 +134,10 @@
       },
       dateViewer(date) {
         if (!date || !this.valid(date)) {
+          this.nv = true;
           return this.caption || 'Выбрать дату';
         }
+        this.nv = false;
         let pieces = date.split('-');
         let string = `${pieces[2]} ${this.monthsShort[pieces[1] - 1]} ${pieces[0]}`;
         return string;
@@ -215,6 +218,7 @@
   .x-date-picker {
     position: relative;
     .x-date-viewer {
+      background-color: white;
       width: calc(100% - 26px);
       cursor: pointer;
       display: inline-flex;

@@ -76,11 +76,11 @@ var Ripple = {
         {
           rippleContainer.parentNode.removeChild(rippleContainer);
         }, 850);
-        el.removeEventListener('mouseup', clearRipple, false);
+        document.body.removeEventListener('mouseup', clearRipple, false);
       }
       if (event.type === 'mousedown')
       {
-        el.addEventListener('mouseup', clearRipple, false);
+        document.body.addEventListener('mouseup', clearRipple, false);
       }
       else
       {

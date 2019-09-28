@@ -3,13 +3,15 @@ import Router from 'vue-router';
 
 import Auth from '@/views/auth/auth';
 import Home from '@/views/home/home';
-import MuseumProfile from '@/views/museum/profile';
-import VolunteerProfile from '@/views/volunteer/profile';
-import MemberProfile from '@/views/member/profile';
+import Profile from '@/views/profile/profile';
 import TicketPass from '@/views/qrscanner.vue';
 import Ticket from '@/views/ticket.vue';
 import EventCreator from '@/views/member/event-creator.vue';
 import Error from '@/views/error.vue';
+import Event from '@/views/event.vue';
+import Me from '@/views/me.vue';
+import SettingsProfile from '@/views/settings-profile/settings.vue';
+import SettingsMuseum from '@/views/settings-museum.vue';
 
 import store from '@/store/index';
 
@@ -30,19 +32,19 @@ const router = new Router({
       component: Auth,
     },
     {
-      path: '/museum/:id',
-      name: 'museum',
-      component: MuseumProfile,
+      path: '/me',
+      name: 'me',
+      component: Me,
     },
     {
-      path: '/volunteer/:id',
-      name: 'volunteer',
-      component: VolunteerProfile,
+      path: '/profile/:id',
+      name: 'profile',
+      component: Profile,
     },
     {
-      path: '/member/:id',
-      name: 'member',
-      component: MemberProfile,
+      path: '/event/:id',
+      name: 'event',
+      component: Event,
     },
     {
       path: '/ticketpass',
@@ -63,6 +65,22 @@ const router = new Router({
       path: '/newevent',
       name: 'newevent',
       component: EventCreator,
+      meta: {
+        roles: ['member']
+      }
+    },
+    {
+      path: '/settings-profile',
+      name: 'profile_settings',
+      component: SettingsProfile,
+      meta: {
+        roles: ['member', 'volunteer']
+      }
+    },
+    {
+      path: '/settings-museum',
+      name: 'museum_settings',
+      component: SettingsMuseum,
       meta: {
         roles: ['member']
       }

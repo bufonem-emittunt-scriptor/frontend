@@ -36,7 +36,7 @@
       },
       containerStyles() {
         let style = {};
-        this.width && (style.width = `calc(${this.width} - 10px)`);
+        this.width && (style.width = this.width);
         this.ma && (style.margin = this.ma);
         return style;
       },
@@ -55,14 +55,16 @@
             'font-size': '12px',
             'top': '-7px',
             'left': '6px',
-            'color': this.isFocused ? (this.color || this.sty.borderColor) : this.sty.borderColor
+            'color': this.isFocused ? (this.color || this.sty.borderColor) : this.sty.borderColor,
+            'background-position': '0 0'
           }
         }
         return {
           'font-size': '16px',
           'top': '13px',
-          'left': '5px',
-          'color': this.sty.borderColor
+          'left': '10px',
+          'color': this.sty.borderColor,
+          'background-position': '0 20px'
         }
       },
       tvalue: {
@@ -83,9 +85,11 @@
     display: inline-block;
     position: relative;
     .x-input {
-      width: calc(100% - 10px);
+      width: calc(100% - 18px);
       outline: none;
       padding: 4px;
+      padding-left: 8px;
+      padding-right: 8px;
       border-radius: 5px;
       font-size: 16px;
       height: calc(100% - 10px);
@@ -96,8 +100,11 @@
       transition: 0.3s;
       position: absolute;
       font-size: 16px;
-      background-color: white;
       color: $borderColor;
+      background-color: white;
+      background: linear-gradient(180deg, rgba(237,238,240,1) 0%, rgba(237,238,240,1) 45%, rgba(237,238,240,1) 47%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+      background-repeat: no-repeat;
+      user-select: none;
     }
     .vis-toggle {
       position: absolute;
@@ -105,6 +112,7 @@
       background-color: white;
       right: 10px;
       color: $borderColor;
+      user-select: none;
     }
   }
 </style>

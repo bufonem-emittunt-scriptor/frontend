@@ -1,9 +1,9 @@
 <template>
   <div class="error-container">
     <div class="error">
-      <img class="img" src="@/static/imgs/error.jpg" />
       <span class="head">Ой!</span>
       <span class="hint">{{ types }}</span>
+      <span class="link" @click="$router.push('/')">На главную</span>
     </div>
   </div>
 </template>
@@ -47,13 +47,22 @@
         max-width: 460px;
       }
       .head {
-        font-size: 42px;
+        font-size: 82px;
         margin-top: 40px;
         color: $appColor;
       }
       .hint {
         font-size: 16px;
         color: $appColor;
+        text-align: center;
+      }
+      .link {
+        font-size: 16px;
+        color: grey;
+        text-align: center;
+        margin-top: 80px;
+        cursor: pointer;
+        text-decoration: underline;
       }
     }
   }

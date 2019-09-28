@@ -1,5 +1,6 @@
 import { api } from 'api';
 import router from '@/router';
+import store from '@/store';
 
 const refresh_token = () => localStorage.getItem('refresh_token');
 const access_token = () => localStorage.getItem('access_token');
@@ -31,10 +32,12 @@ function refreshToken() {
       access: response.data.access,
       refresh: response.data.refresh
     });
+    store.commit('setAuth', true);
   })
   .catch(error => {
     router.push('/error/session');
     deletePair();
+    store.commit('setAuth', false);
   });
 }
 
@@ -51,10 +54,12 @@ function getFirstPair(body, error = () => {}, success = () => {}) {
       refresh: response.data.refresh
     });
     setRefresherer();
+    store.commit('setAuth', true);
   })
   .catch(error => {
     error();
     deletePair();
+    store.commit('setAuth', false);
   });
 }
 
@@ -67,10 +72,12 @@ function tryToRestore() {
       access: response.data.access,
       refresh: response.data.refresh
     });
+    store.commit('setAuth', true);
   })
   .catch(error => {
     router.push('/auth');
     deletePair();
+    store.commit('setAuth', false);
   });
 }
 

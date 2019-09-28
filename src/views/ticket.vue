@@ -2,13 +2,16 @@
   <div class="ticket-container">
     <div class="ticket">
       <div class="nice" />
-      <h2>
-        Выставка чего то
+      <h2 class="event">
+        Выставка современного искусства 24.11
       </h2>
-      <h4>
+      <h4 class="owner">
         Петров Иван
       </h4>
       <img class="qr" src="http://qrcoder.ru/code/?ticket%405ff5a77f-7df8-4a1a-90e1-1b8aa0a50f19&4&0" />
+      <div class="control">
+        КОНТРОЛЬ
+      </div>
     </div>
   </div>
 </template>
@@ -39,10 +42,16 @@
     height: 100%;
     .ticket {
       position: relative;
+      .event {
+        text-align: center;
+      }
+      .owner {
+        text-align: center;
+      }
       .nice {
         position: absolute;
         top: 0px;
-        background-color: red;
+        background-color: $bgColor;
         border-radius: 0 0 20px 20px;
         height: 30px;
         width: 80%;
@@ -52,13 +61,23 @@
       padding-bottom: 40px;
       border-radius: 16px;
       width: 100%;
-      max-width: 240px;
+      max-width: 320px;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      background-color: yellow;
-      box-shadow: 0 12px 17px 2px rgba(0, 0, 0, .14), 0 5px 22px 4px rgba(0, 0, 0, .12), 0 7px 8px -4px rgba(0, 0, 0, .20);
+      background-color: $appColor;
+      .control {
+        border-top: 5px dotted $bgColor;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+        padding-top: 40px;
+        width: 100%;
+        font-weight: bold;
+        font-size: 20px;
+      }
       .qr {
         width: 75%;
         border-radius: 8px;

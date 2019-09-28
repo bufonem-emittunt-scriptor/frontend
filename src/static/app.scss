@@ -1,13 +1,15 @@
 $borderColor: #B0B0B0;
-$appColor: #4A235A;
-$appInactive: #D2B4DE;
+$appColor: #FFBE2E;
+$appInactive: #FFF1D6;
 $errorColor: #CB4335;
+$bgColor: #EDEEF0;
 
 :export {
   borderColor: $borderColor;
   appColor: $appColor;
   appInactive: $appInactive;
   errorColor: $errorColor;
+  bgColor: $bgColor;
 }
 
 body {
@@ -17,7 +19,13 @@ body {
   padding: 0px;
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
+  background-color: $bgColor;
 }
+
+.ql-container, .ql-toolbar {
+  border: none !important;
+}
+
 
 @media only screen and (max-width: 420px) {
   font-size: 8pt;

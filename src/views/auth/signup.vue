@@ -29,7 +29,7 @@
           </div>
         </div>
 
-        <x-card class="signup-form" rounded pa="10px" color="white">
+        <x-card class="signup-form" rounded pa="10px" :color="sty.bgColor">
           <div class="fields-container">
             <h3 class="field" style="margin-bottom: 40px">Регистрация {{ who }}</h3>
             <transition name="trans" mode="out-in">
@@ -39,7 +39,7 @@
                   caption="ФИО"
                   class="field"
                   :color="sty.appColor"
-                  width="calc(100% - 6px)"
+                  width="calc(100% - 16px)"
                 />
                 <x-row>
                   <x-input
@@ -47,7 +47,7 @@
                     caption="Логин"
                     class="field"
                     :color="sty.appColor"
-                    width="50%"
+                    width="calc(50% - 10px)"
                   />
                   <x-input
                     v-model="vol.email"
@@ -55,7 +55,7 @@
                     type="email"
                     :color="sty.appColor"
                     class="field"
-                    width="50%"
+                    width="calc(50% - 10px)"
                   />
                 </x-row>
                 <x-row>
@@ -65,7 +65,7 @@
                     type="password"
                     :color="sty.appColor"
                     class="field"
-                    width="50%"
+                    width="calc(50% - 10px)"
                   />
                   <x-date-picker
                     v-model="vol.birth"
@@ -86,13 +86,15 @@
                 />
               </div>
               <div v-if="userType === 'museum'" key="1">
-                <x-input
-                  v-model="mus.name"
-                  caption="Название музея"
-                  class="field"
-                  :color="sty.appColor"
-                  width="calc(100% - 6px)"
-                />
+                <x-row>
+                  <x-input
+                    v-model="mus.name"
+                    caption="Название музея"
+                    class="field"
+                    :color="sty.appColor"
+                    width="calc(100% - 6px)"
+                  />
+                </x-row>
                 <x-row>
                   <x-input
                     v-model="mus.login"
@@ -123,6 +125,16 @@
             >
               Зарегистрироваться
             </x-button-ns>
+
+            <div class="alter" v-if="userType === 'volunteer'">
+              <div class="alter-login">
+                <img src="@/static/imgs/vk-logo.png" class="icon-img" />
+              </div>
+              <div class="alter-login">
+                <img src="@/static/imgs/google-logo.png" class="icon-img" />
+              </div>
+            </div>
+
             <div class="donthave" @click="() => authChange('login')">
               У меня есть аккаунт
             </div>
@@ -213,6 +225,20 @@
           width: 100%;
           .field {
             margin: 8px;
+          }
+          .alter {
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            .alter-login {
+              width: 34px;
+              margin: 8px;
+              display: inline-block;
+              .icon-img {
+                width: 100%;
+              }
+            }
           }
           .donthave {
             text-align: center;

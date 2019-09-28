@@ -1,6 +1,7 @@
 export default {
   state: {
-    userType: 'member'
+    userType: 'member',
+    authoized: false
   },
   actions: {
 
@@ -8,6 +9,9 @@ export default {
   mutations: {
     setUserType(state, newUserType) {
       state.userType = newUserType;
+    },
+    setAuth(state, value) {
+      state.authoized = value;
     }
   },
 };

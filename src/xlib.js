@@ -10,6 +10,7 @@ import XPicker from './components/lib/x-picker.vue';
 import sty from '@/static/app.scss';
 import Ripple from '@/components/lib/ripple.js'
 import '@/components/lib/ripple.css';
+import VueUploadComponent from 'vue-upload-component';
 
 export default {
   install(Vue) {
@@ -22,6 +23,7 @@ export default {
     Vue.component('x-date-picker', XDatePicker);
     Vue.component('x-input', XInput);
     Vue.component('x-picker', XPicker);
+    Vue.component('x-upload', VueUploadComponent);
     Vue.directive('ripple', Ripple);
     Vue.mixin({
       data: () => ({

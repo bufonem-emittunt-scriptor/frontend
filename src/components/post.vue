@@ -9,6 +9,7 @@
     >
       <div class="shadow" />
       <div class="down-shadow" />
+      <div class="dark-container" />
 
       <div class="post-info">
         <div class="museum-avatar" @click="() => goMuseum(post.museumId)">
@@ -29,11 +30,33 @@
       </div>
 
       <div class="post-controls">
-        <x-button color="white" style="margin-bottom: 20px; margin-right: 10px;" class="button" @click="() => takePart(post.eventId)">
+        <x-button
+          color="white"
+          style="margin-bottom: 20px; margin-right: 10px;"
+          class="button"
+          @click="() => takePart(post.eventId)"
+          v-if="cantGo == null"
+        >
           <x-icon name="directions_run" ir />
           <span>Я пойду</span>
         </x-button>
-        <x-button color="white" style="margin-bottom: 20px; margin-left: 10px;" class="button" @click="() => goEvent(post.eventId)">
+        <x-button
+          color="rgb(255, 100 ,100)"
+          style="margin-bottom: 20px; margin-right: 10px;"
+          class="button"
+          dark
+          @click="() => deleteEvent(post.eventId)"
+          v-else
+        >
+          <x-icon name="close" ir />
+          <span>Удалить</span>
+        </x-button>
+        <x-button
+          color="white"
+          :style="`margin-bottom: 20px; margin-left: 10px;`"
+          class="button"
+          @click="() => goEvent(post.eventId)"
+        >
           <x-icon name="menu_book" ir />
           <span>Описание</span>
         </x-button>
@@ -53,13 +76,16 @@
 
 <script>
   export default {
-    props: ['post'],
+    props: ['post', 'cantGo'],
     methods: {
       goMuseum(id) {
         this.$router.push('/museum/' + id);
       },
       goEvent(id) {
         this.$router.push('/event/' + id);
+      },
+      deleteEvent(id) {
+
       },
       takePart(id) {
 
@@ -97,9 +123,21 @@
         .image {
           width: 100%;
           display: block;
-
+          max-height: 460px;
         }
 
+      }
+
+      .dark-container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        transition: 0.7s;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.3);
+        }
       }
 
       .post-controls {

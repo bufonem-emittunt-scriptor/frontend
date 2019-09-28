@@ -2,7 +2,7 @@
   <div class="login-page">
     <div class="flex-container">
       <img src="@/static/imgs/onlogin.png" class="login-image" />
-      <x-card class="login-form" rounded pa="10px" color="white">
+      <x-card class="login-form" rounded pa="10px" :color="sty.bgColor">
         <div class="fields-container">
           <h3 class="field" style="margin-bottom: 40px">Вход</h3>
           <x-input
@@ -18,6 +18,11 @@
             :color="sty.appColor"
             class="field"
           />
+
+          <div class="forgot" @click="() => $router.push('/restore')">
+            Я забыл пароль
+          </div>
+
           <x-button-ns
             class="field"
             style="margin-top: 40px"
@@ -98,6 +103,14 @@
               width: 100%;
             }
           }
+        }
+        .forgot {
+          text-align: center;
+          width: 100%;
+          color: grey;
+          margin-top: 0px;
+          cursor: pointer;
+          text-decoration: underline;
         }
 
         .donthave {

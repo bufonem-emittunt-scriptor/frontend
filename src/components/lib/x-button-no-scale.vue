@@ -3,7 +3,7 @@
     <div
       class="x-button"
       :style="computedStyle"
-      @click="$emit('click')"
+      @click.stop="action"
       v-ripple="rippleColor"
     >
       <slot/>
@@ -14,6 +14,11 @@
 <script>
   export default {
     props: ['ma', 'width', 'color', 'dark'],
+    methods: {
+      action() {
+        setTimeout(() => this.$emit('click'), 200);
+      }
+    },
     computed: {
       rippleColor() {
         return this.dark == null ? this.color : 'white';

@@ -34,6 +34,7 @@
 
   @media only screen and (max-width: 420px) {
     .x-icon {
+      user-select: none;
       font-size: 24px;
     }
   }
