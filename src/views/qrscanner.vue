@@ -21,7 +21,7 @@ export default {
     }
   },
   mounted() {
-    if (tester()) {
+    if (!tester()) {
       this.$router.push('/error/device');
     }
   },
