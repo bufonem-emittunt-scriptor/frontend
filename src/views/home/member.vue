@@ -11,9 +11,9 @@
             <img class="img" src="http://public.superjob.ru/images/clients_logos.ru/2246264_e2b7272827d530112d0c686cb4058266.jpg" />
           </div>
           <div class="right-block">
-            <h3 class="fio field" @click="goProf">
+            <h2 class="fio field" @click="goProf">
               {{ 'Понаева Любобь Николаевна' }}
-            </h3>
+            </h2>
             <x-button dark color="#0D8A00" width="calc(100% - 20px)" class="field" @click="$router.push('/newevent')">
               <x-icon name="add" ir />
               <span>Создать мероприятие</span>
@@ -48,7 +48,7 @@
       OnePost
     },
     mounted() {
-      //TODO getFromMuseum
+      this.$store.dispatch('getMuseumPost', this.museumId);
     },
     methods: {
       goProf() {
@@ -56,6 +56,9 @@
       }
     },
     computed: {
+      museumId() {
+        //return TODO museumId
+      },
       posts() {
         return this.$store.state.posts.posts;
       }

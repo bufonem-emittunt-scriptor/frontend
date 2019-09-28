@@ -7,6 +7,7 @@ import XButtonNs from './components/lib/x-button-no-scale.vue';
 import XDatePicker from './components/lib/x-date-picker.vue';
 import XInput from './components/lib/x-input.vue';
 import XPicker from './components/lib/x-picker.vue';
+import XDialog from './components/lib/x-dialog.vue';
 import sty from '@/static/app.scss';
 import Ripple from '@/components/lib/ripple.js'
 import '@/components/lib/ripple.css';
@@ -24,6 +25,7 @@ export default {
     Vue.component('x-input', XInput);
     Vue.component('x-picker', XPicker);
     Vue.component('x-upload', VueUploadComponent);
+    Vue.component('x-dialog', XDialog);
     Vue.directive('ripple', Ripple);
     Vue.mixin({
       data: () => ({

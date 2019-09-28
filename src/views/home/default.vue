@@ -1,7 +1,7 @@
 <template>
   <div>
     <app-container>
-      <one-post v-for="(post, index) in posts" :post="post" />
+      <one-post v-for="(post, index) in posts" :post="post" guest />
     </app-container>
   </div>
 </template>
@@ -16,7 +16,7 @@
       OnePost
     },
     mounted() {
-      //TODO getAllPosts
+      this.$store.dispatch('getAllPosts');
     },
     computed: {
       posts() {

@@ -35,7 +35,7 @@
           style="margin-bottom: 20px; margin-right: 10px;"
           class="button"
           @click="() => takePart(post.eventId)"
-          v-if="cantGo == null"
+          v-if="cantGo == null && guest == null"
         >
           <x-icon name="directions_run" ir />
           <span>Я пойду</span>
@@ -46,14 +46,14 @@
           class="button"
           dark
           @click="() => deleteEvent(post.eventId)"
-          v-else
+          v-if="cantGo != null && guest == null"
         >
           <x-icon name="close" ir />
           <span>Удалить</span>
         </x-button>
         <x-button
           color="white"
-          :style="`margin-bottom: 20px; margin-left: 10px;`"
+          :style="`margin-bottom: 20px; margin-left: ${guest == null ? 10 : 0}px;`"
           class="button"
           @click="() => goEvent(post.eventId)"
         >
@@ -76,7 +76,7 @@
 
 <script>
   export default {
-    props: ['post', 'cantGo'],
+    props: ['post', 'cantGo', 'guest'],
     methods: {
       goMuseum(id) {
         this.$router.push('/museum/' + id);
@@ -217,6 +217,12 @@
   @media only screen and (max-width: 420px) {
     .post {
       .card {
+        .shadow {
+          box-shadow: inset 0px 90px 153px -99px rgba(0,0,0,1);
+        }
+        .down-shadow {
+          box-shadow: inset 0px -90px 153px -99px rgba(0,0,0,1);
+        }
         .post-controls {
           .button {
             width: 120px;

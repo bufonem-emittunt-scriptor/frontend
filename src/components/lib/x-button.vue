@@ -13,10 +13,22 @@
 
 <script>
   export default {
-    props: ['ma', 'width', 'color', 'dark'],
+    props: ['ma', 'width', 'color', 'dark', 'valid'],
     methods: {
       action() {
-        setTimeout(() => this.$emit('click'), 200);
+        if (this.valid != null) {
+          if (this.valid === true) {
+            setTimeout(() => this.$emit('click'), 200);
+          } else {
+            this.$store.dispatch('openSnack', {
+              color: 'red',
+              icon: 'edit',
+              text: this.valid
+            });
+          }
+        } else {
+          setTimeout(() => this.$emit('click'), 200);
+        }
       }
     },
     computed: {

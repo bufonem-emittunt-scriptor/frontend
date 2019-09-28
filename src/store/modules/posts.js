@@ -1,3 +1,5 @@
+import { api } from '@/services/api';
+
 export default {
   state: {
     posts: [
@@ -28,9 +30,49 @@ export default {
     ]
   },
   actions: {
+    getAllPosts({commit, dispatch}) {
+      commit('setLoading', true);
+      api.get('/posts')
+      .then(response => {
+        commit('savePosts', response.data.objects);
+      })
+      .catch(error => {
 
+      })
+      .finally(() => {
+        commit('setLoading', false);
+      });
+    },
+    getSubscriptions({commit, dispatch}, volunteerId) {
+      commit('setLoading', true);
+      api.get('/posts')
+      .then(response => {
+        commit('savePosts', response.data.objects);
+      })
+      .catch(error => {
+
+      })
+      .finally(() => {
+        commit('setLoading', false);
+      });
+    },
+    getMuseumPost({commit, dispatch}, museumId) {
+      commit('setLoading', true);
+      api.get('/posts')
+      .then(response => {
+        commit('savePosts', response.data.objects);
+      })
+      .catch(error => {
+
+      })
+      .finally(() => {
+        commit('setLoading', false);
+      });
+    }
   },
   mutations: {
-
+    savePosts(state, posts) {
+      state.posts = posts;
+    }
   },
 };

@@ -105,6 +105,8 @@
       background: linear-gradient(180deg, rgba(237,238,240,1) 0%, rgba(237,238,240,1) 45%, rgba(237,238,240,1) 47%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
       background-repeat: no-repeat;
       user-select: none;
+      padding-left: 2px;
+      padding-right: 2px;
     }
     .vis-toggle {
       position: absolute;

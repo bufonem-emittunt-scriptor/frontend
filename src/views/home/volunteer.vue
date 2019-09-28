@@ -16,9 +16,12 @@
       OnePost
     },
     mounted() {
-      //TODO getSubscriptions
+      this.$store.dispatch('getSubscriptions', this.volunteerId);
     },
     computed: {
+      volunteerId() {
+        //TODO volunteerId
+      },
       posts() {
         return this.$store.state.posts.posts;
       }
