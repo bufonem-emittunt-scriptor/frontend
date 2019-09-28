@@ -1,6 +1,6 @@
 <template>
   <div class="x-picker" :style="computedStyles">
-    <div class="picker-chosen" @click="openItems">
+    <div class="picker-chosen" @click="itemsOpened = !itemsOpened">
       <span class="item">{{ value || caption || 'Выберите' }}</span>
       <x-icon name="arrow_drop_down" color="black" />
     </div>
@@ -61,6 +61,7 @@
       align-items: center;
       justify-content: space-between;
       border-radius: 5px;
+      z-index: 5;
 
       .item {
         width: calc(100% - 28px);
@@ -73,11 +74,15 @@
       top: 34px;
       left: 0px;
       width: 100%;
+
       .card {
         max-height: 200px;
         overflow-y: auto;
+        z-index: 4;
+        background-color: $bgColor;
         .item {
           transition: 0.1s;
+          padding: 10px 20px;
           &:hover {
             background-color: var(--hover-col);
           }
