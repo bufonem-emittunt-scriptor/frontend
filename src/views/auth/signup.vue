@@ -201,9 +201,7 @@
   }
 
   .flex-container {
-    position: fixed;
-    top: 0px;
-    left: 0px;
+    padding-top: 100px;
     display: flex;
     align-items: center;
     justify-content: center;

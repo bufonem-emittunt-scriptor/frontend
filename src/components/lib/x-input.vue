@@ -81,7 +81,7 @@
 
 <style scoped lang="scss">
   .x-input-container {
-    height: 44px;
+    height: 44px !important;
     display: inline-block;
     position: relative;
     .x-input {

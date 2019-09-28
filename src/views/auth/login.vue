@@ -70,9 +70,7 @@
     margin-bottom: 20px;
   }
   .flex-container {
-    position: fixed;
-    top: 0px;
-    left: 0px;
+    padding-top: 60px;
     width: 100%;
     height: 100%;
     display: flex;

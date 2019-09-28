@@ -1,12 +1,10 @@
 <template>
   <div class="auth">
-    <transition name="trans">
-      <div v-if="authType === 'login'">
+    <transition name="trans" mode="out-in">
+      <div v-if="authType === 'login'" key="1">
         <LoginForm :authChange="authChange" />
       </div>
-    </transition>
-    <transition name="trans">
-      <div v-if="authType === 'signup'">
+      <div v-if="authType === 'signup'" key="2">
         <SignupForm :authChange="authChange" :userType="userType" :userChange="userChange"/>
       </div>
     </transition>
