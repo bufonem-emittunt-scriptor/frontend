@@ -56,7 +56,8 @@
             'top': '-7px',
             'left': '6px',
             'color': this.isFocused ? (this.color || this.sty.borderColor) : this.sty.borderColor,
-            'background-position': '0 0'
+            'background-position': '0 0',
+            'font-weight': 'bold'
           }
         }
         return {
@@ -64,7 +65,8 @@
           'top': '13px',
           'left': '10px',
           'color': this.sty.borderColor,
-          'background-position': '0 20px'
+          'background-position': '0 20px',
+          'font-weight': 'normal'
         }
       },
       tvalue: {

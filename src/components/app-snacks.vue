@@ -49,6 +49,7 @@
     right: 0px;
     padding: 10px;
     .snack {
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
       justify-content: flex-start;

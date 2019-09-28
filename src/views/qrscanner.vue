@@ -27,7 +27,7 @@
     },
     mounted() {
       if (!tester()) {
-        //this.$router.push('/error/device');
+        this.$router.push('/error/device');
       }
     },
     computed: {
