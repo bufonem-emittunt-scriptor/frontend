@@ -12,6 +12,8 @@ import Event from '@/views/event.vue';
 import Me from '@/views/me.vue';
 import SettingsProfile from '@/views/settings-profile/settings.vue';
 import SettingsMuseum from '@/views/settings-museum.vue';
+import ForVol from '@/views/forvol.vue';
+import Memo from '@/views/memo.vue';
 
 import store from '@/store/index';
 
@@ -30,6 +32,16 @@ const router = new Router({
       path: '/auth',
       name: 'auth',
       component: Auth,
+    },
+    {
+      path: '/forvol',
+      name: 'forvol',
+      component: ForVol,
+    },
+    {
+      path: '/memo',
+      name: 'memo',
+      component: Memo,
     },
     {
       path: '/me',

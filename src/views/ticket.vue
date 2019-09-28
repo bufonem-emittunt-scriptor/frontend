@@ -8,7 +8,7 @@
       <h4 class="owner">
         {{ ticketDecode.owner }}
       </h4>
-      <img class="qr" :src="ticket.scanQR" />
+      <img class="qr" :src="ticketDecode.scanQR" />
       <div class="control">
         КОНТРОЛЬ
       </div>

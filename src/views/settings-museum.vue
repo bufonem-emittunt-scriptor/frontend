@@ -11,7 +11,7 @@
         <div class="done" :style="done ? 'top: -10px' : 'top: -60px'">
           <x-icon name="done" />
         </div>
-        <h3>Редактирование музея</h3>
+        <h3>Карточка музея</h3>
         <x-input
           v-model="name"
           caption="Название музея"
@@ -107,7 +107,7 @@
       align-items: center;
       justify-content: center;
       display: flex;
-      background-color: green;
+      background-color: $appColor;
       color: white;
       border-radius: 0 0 50% 50%;
     }
@@ -117,7 +117,7 @@
       top: 0px;
       left: 0px;
       height: 4px;
-      background-color: green;
+      background-color: $appColor;
     }
   }
 </style>

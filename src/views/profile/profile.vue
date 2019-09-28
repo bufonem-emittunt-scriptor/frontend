@@ -25,7 +25,7 @@
         return this.$store.state.profile.profile;
       },
       profileType() {
-        return this.profile.role;
+        return 'volunteer'//this.profile.role;
       },
       mounted() {
         this.$store.dispatch('getProfile', this.id);

@@ -122,6 +122,7 @@
               :color="sty.appColor"
               width="calc(100% - 16px)"
               dark
+              @click="signup"
             >
               Зарегистрироваться
             </x-button-ns>
@@ -149,6 +150,8 @@
 </template>
 
 <script>
+  import { api } from '@/services/api';
+
   export default {
     props: ['authChange', 'userType', 'userChange'],
     computed: {
@@ -180,7 +183,22 @@
         code: ''
       },
       password: ''
-    })
+    }),
+    methods: {
+      signup() {
+        api.post('users', {
+          role: 'doer',
+          userName: this.vol.login,
+          password: this.password
+        })
+        .then(response => {
+          console.log(response);
+        })
+        .catch(error => {
+          console.log(error);
+        })
+      }
+    }
   }
 </script>
 

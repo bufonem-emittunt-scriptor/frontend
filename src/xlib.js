@@ -12,6 +12,8 @@ import sty from '@/static/app.scss';
 import Ripple from '@/components/lib/ripple.js'
 import '@/components/lib/ripple.css';
 import VueUploadComponent from 'vue-upload-component';
+import PrettyCheckbox from 'pretty-checkbox-vue';
+import VTooltip from 'v-tooltip';
 
 export default {
   install(Vue) {
@@ -27,6 +29,8 @@ export default {
     Vue.component('x-upload', VueUploadComponent);
     Vue.component('x-dialog', XDialog);
     Vue.directive('ripple', Ripple);
+    Vue.use(PrettyCheckbox);
+    Vue.use(VTooltip);
     Vue.mixin({
       data: () => ({
         sty,

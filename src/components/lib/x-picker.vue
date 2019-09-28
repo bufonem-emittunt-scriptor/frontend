@@ -1,6 +1,6 @@
 <template>
   <div class="x-picker" :style="computedStyles">
-    <div class="picker-chosen" @click="itemsOpened = !itemsOpened">
+    <div class="picker-chosen" @click.stop="openItems">
       <span class="item">{{ value || caption || 'Выберите' }}</span>
       <x-icon name="arrow_drop_down" color="black" />
     </div>
@@ -8,10 +8,10 @@
       <x-card class="card" elev="3" fd="column" rounded>
         <div
           v-for="(item, index) in items"
-          @click="() => setItem(item)"
+          @click="() => setItem(cod != null ? item.code : item)"
           class="item"
         >
-          {{ item }}
+          {{ nam != null ? item.nam : item }}
         </div>
       </x-card>
     </div>
@@ -20,16 +20,18 @@
 
 <script>
   export default {
-    props: ['ma', 'items', 'value', 'color', 'width', 'caption'],
+    props: ['ma', 'items', 'value', 'color', 'width', 'caption', 'cod', 'nam'],
     data: () => ({
       itemsOpened: false
     }),
     methods: {
       openItems() {
         this.itemsOpened = true;
+        document.querySelector('#app').addEventListener('click', this.closeItems);
       },
       closeItems() {
         this.itemsOpened = false;
+        document.querySelector('#app').removeEventListener('click', this.closeItems);
       },
       setItem(item) {
         this.$emit('input', item);
@@ -55,8 +57,10 @@
 
     .picker-chosen {
       border: 1px solid $borderColor;
-      height: calc(34px - 10px);
+      background-color: white;
+      height: calc(44px - 10px);
       padding: 4px;
+      padding-left: 8px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -71,7 +75,7 @@
     }
     .items {
       position: absolute;
-      top: 34px;
+      top: 44px;
       left: 0px;
       width: 100%;
 

@@ -2,7 +2,7 @@ import axios from 'axios';
 import router from '@/router.js';
 
 const api = axios.create({
-  baseURL: 'https://<addr>.<domain>'
+  baseURL: 'https://museer0007.herokuapp.com/'
 });
 
 function handleError(error) {

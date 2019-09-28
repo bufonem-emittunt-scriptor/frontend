@@ -19,6 +19,8 @@
               <x-picker :items="pickerItems" width="250px" color="#D5D6D8" @input="setPicker($event)" :value="currItem" />
             </div>
 
+            
+
             <x-button dark color="#0D8A00" width="calc(100% - 20px)" class="field" @click="$router.push('/newevent')">
               <x-icon name="add" ir />
               <span>Создать мероприятие</span>
