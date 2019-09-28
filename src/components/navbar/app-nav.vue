@@ -37,7 +37,7 @@
 <style scoped lang="scss">
   .app-nav {
     .logo {
-      height: 100%;
+      height: 80%;
       cursor: pointer;
     }
     position: fixed;

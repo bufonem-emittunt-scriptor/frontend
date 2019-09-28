@@ -3,12 +3,12 @@
     <div class="ticket">
       <div class="nice" />
       <h2 class="event">
-        Выставка современного искусства 24.11
+        {{ ticketDecode.event }}
       </h2>
       <h4 class="owner">
-        Петров Иван
+        {{ ticketDecode.owner }}
       </h4>
-      <img class="qr" src="http://qrcoder.ru/code/?ticket%405ff5a77f-7df8-4a1a-90e1-1b8aa0a50f19&4&0" />
+      <img class="qr" :src="ticket.scanQR" />
       <div class="control">
         КОНТРОЛЬ
       </div>
@@ -17,16 +17,22 @@
 </template>
 
 <script>
-
-  /*
-    guid
-    event
-    qrLink
-    Name
-  */
-
   export default {
-    props: ['ticket']
+    data: () => ({
+      ticketDecode: {
+        owner: 'Петров Иван',
+        event: 'Выставка современного искусства 24.11',
+        scanQR: 'http://qrcoder.ru/code/?ticket%405ff5a77f-7df8-4a1a-90e1-1b8aa0a50f19&4&0'
+      }
+    }),
+    computed: {
+      ticket() {
+        return this.$route.params.guid;
+      }
+    },
+    mounted() {
+      // TODO decode query
+    }
   }
 </script>
 
