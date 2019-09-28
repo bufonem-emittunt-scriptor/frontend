@@ -28,7 +28,7 @@
     props: ['type', 'value', 'caption', 'width', 'ma', 'color', 'nativeType'],
     data: () => ({
       isFocused: false,
-      visibility: false
+      visibility: true
     }),
     computed: {
       ctype() {
