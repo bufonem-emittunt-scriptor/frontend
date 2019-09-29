@@ -14,6 +14,7 @@ import SettingsProfile from '@/views/settings-profile/settings.vue';
 import SettingsMuseum from '@/views/settings-museum.vue';
 import ForVol from '@/views/forvol.vue';
 import Memo from '@/views/memo.vue';
+import Tickets from '@/views/tickets.vue';
 
 import store from '@/store/index';
 
@@ -37,11 +38,25 @@ const router = new Router({
       path: '/forvol',
       name: 'forvol',
       component: ForVol,
+      meta: {
+        roles: ['volunteer']
+      }
     },
     {
       path: '/memo',
       name: 'memo',
       component: Memo,
+      meta: {
+        roles: ['volunteer']
+      }
+    },
+    {
+      path: '/tickets',
+      name: 'tickets',
+      component: Tickets,
+      meta: {
+        roles: ['volunteer']
+      }
     },
     {
       path: '/me',
@@ -62,6 +77,9 @@ const router = new Router({
       path: '/ticketpass',
       name: 'ticketpass',
       component: TicketPass,
+      meta: {
+        roles: ['member']
+      }
     },
     {
       path: '/ticket/:guid',

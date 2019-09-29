@@ -15,23 +15,22 @@
               {{ 'Понаева Любобь Николаевна' }}
             </h2>
 
-            <div style="margin: 20px 0;">
-              <x-picker :items="pickerItems" width="250px" color="#D5D6D8" @input="setPicker($event)" :value="currItem" />
-            </div>
 
-            
-
-            <x-button dark color="#0D8A00" width="calc(100% - 20px)" class="field" @click="$router.push('/newevent')">
+            <x-button dark :color="sty.appColor" width="calc(100% - 20px)" class="field" @click="$router.push('/newevent')">
               <x-icon name="add" ir />
               <span>Создать мероприятие</span>
             </x-button>
-            <x-button dark color="#0000BC" width="calc(100% - 20px)" class="field" @click="$router.push('/settings-profile')">
+            <x-button dark color="black" width="calc(100% - 20px)" class="field" @click="$router.push('/settings-profile')">
               <x-icon name="person" ir />
               <span>Настроить профиль</span>
             </x-button>
-            <x-button dark color="#E9A419" width="calc(100% - 20px)" class="field" @click="$router.push('/settings-museum')">
+            <x-button dark :color="sty.appColor" width="calc(100% - 20px)" class="field" @click="$router.push('/settings-museum')">
               <x-icon name="museum" ir />
               <span>Настроить музей</span>
+            </x-button>
+            <x-button dark color="black" width="calc(100% - 20px)" class="field" @click="$router.push('/ticketpass')">
+              <x-icon name="extension" ir />
+              <span>Проверка билетов</span>
             </x-button>
           </div>
         </div>

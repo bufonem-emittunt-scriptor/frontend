@@ -1,6 +1,6 @@
 export default {
   state: {
-    userType: 'volunteer',
+    userType: 'default',
     authoized: false
   },
   actions: {

@@ -1,5 +1,5 @@
 <template>
-  <div class="x-card" :style="computedStyle">
+  <div class="x-card" :style="computedStyle" @click="$emit('click')">
     <slot />
   </div>
 </template>

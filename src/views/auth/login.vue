@@ -29,6 +29,7 @@
             :color="sty.appColor"
             width="calc(100% - 16px)"
             dark
+            @click="login"
           >
             Войти
           </x-button-ns>
@@ -53,12 +54,43 @@
 </template>
 
 <script>
+  import { api } from '@/services/api';
+
   export default {
     props: ['authChange'],
     data: () => ({
       user: '',
       password: ''
-    })
+    }),
+    methods: {
+      login() {
+        api.post('users', {
+          userName: this.user,
+          password: this.password
+        })
+        .then(response => {
+          console.log(response);
+          if (response.data.role === 'volunteer') {
+            this.$store.commit('setAuth', true);
+            this.$store.commit('setUserType', 'volunteer');
+            this.$router.push('/');
+          }
+          if (response.data.role === 'museum') {
+            this.$store.commit('setAuth', true);
+            this.$store.commit('setUserType', 'museum');
+            this.$router.push('/');
+          }
+          if (response.data.role === 'member') {
+            this.$store.commit('setAuth', true);
+            this.$store.commit('setUserType', 'member');
+            this.$router.push('/');
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        })
+      }
+    }
   }
 </script>
 

@@ -12,6 +12,10 @@ $bgColor: #EDEEF0;
   bgColor: $bgColor;
 }
 
+.ql-editor p img {
+  width: 360px;
+}
+
 body {
   font-family: 'Noto Sans', sans-serif;
   font-size: 12pt;

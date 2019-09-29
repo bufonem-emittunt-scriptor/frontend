@@ -151,6 +151,7 @@
 
 <script>
   import { api } from '@/services/api';
+  import axios from 'axios'
 
   export default {
     props: ['authChange', 'userType', 'userChange'],
@@ -187,16 +188,17 @@
     methods: {
       signup() {
         api.post('users', {
-          role: 'doer',
+          role: this.userType,
           userName: this.vol.login,
           password: this.password
         })
         .then(response => {
           console.log(response);
+          this.authChange('login');
         })
         .catch(error => {
-          console.log(error);
-        })
+          //console.log(error.response);
+        });
       }
     }
   }
@@ -281,6 +283,9 @@
           transition: 0.7s;
           overflow: hidden;
           position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           margin: 0px;
           .tile-img {
             width: 100%;
