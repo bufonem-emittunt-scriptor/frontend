@@ -1,7 +1,8 @@
 export default {
   state: {
     userType: 'default',
-    authoized: false
+    authoized: false,
+    user: {}
   },
   actions: {
 
@@ -12,6 +13,9 @@ export default {
     },
     setAuth(state, value) {
       state.authoized = value;
+    },
+    setUser(state, value) {
+      state.user = value;
     }
   },
 };

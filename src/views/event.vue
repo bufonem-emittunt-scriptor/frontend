@@ -2,7 +2,7 @@
   <div>
     <app-container>
       <x-card elev="3" pa="20px" rounded class="card" color="white">
-        <h3>{{ post.title }}</h3>
+        <h3>{{ post.title }} TODO</h3>
         <div class="content" v-html="post.content" />
       </x-card>
     </app-container>

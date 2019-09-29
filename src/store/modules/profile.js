@@ -7,7 +7,7 @@ export default {
   actions: {
     getProfile({commit, dispatch}, id) {
       commit('setLoading', true);
-      api.get('/profile/' + id)
+      api.get('/users/' + id)
       .then(response => {
         commit('saveProfile', response.data);
       })

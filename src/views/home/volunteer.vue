@@ -8,11 +8,11 @@
       >
         <div class="flex">
           <div class="avatar" @click="goProf">
-            <img class="img" src="http://public.superjob.ru/images/clients_logos.ru/2246264_e2b7272827d530112d0c686cb4058266.jpg" />
+            <img class="img" :src="user.avatar" />
           </div>
           <div class="right-block">
             <h2 class="fio field" @click="goProf">
-              {{ 'Понаева Любобь Николаевна' }}
+              {{ user.fio }}
             </h2>
 
 
@@ -58,6 +58,9 @@
       },
     },
     computed: {
+      user() {
+        return this.$store.state.gate.user;
+      },
       volunteerId() {
         //TODO volunteerId
       },

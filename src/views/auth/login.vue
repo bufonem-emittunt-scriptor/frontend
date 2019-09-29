@@ -64,8 +64,8 @@
     }),
     methods: {
       login() {
-        api.post('users', {
-          userName: this.user,
+        api.post('users/login', {
+          login: this.user,
           password: this.password
         })
         .then(response => {
@@ -85,6 +85,7 @@
             this.$store.commit('setUserType', 'member');
             this.$router.push('/');
           }
+          this.$store.commit('setUser', response.data);
         })
         .catch(error => {
           console.log(error);
